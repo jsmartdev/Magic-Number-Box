@@ -38,7 +38,7 @@ function formTemplate() {
 
 function responseTemplate() {
     return `<div class="text-wrap">
-                <p>Behold, your secret magical number is .</p>
+                <p>Behold, your secret magical number is ${magic.value}.</p>
             </div>
             <form id="return" class="btn-wrap">
                 <input class="button" type="submit" value="Return">
@@ -65,23 +65,67 @@ function renderResponse() {
 /* Arithmetic Function */
 
 function getNum() {
-    /* if your-month >= your-day, let a = your-month - your-day */
+    /* declare variables for all form inputs */
+
+    let a = document.getElementById("your-month").value;
+    let b = document.getElementById("your-day").value;
+    let c = document.getElementById("mom-month").value;
+    let d = document.getElementById("mom-day").value;
+    let e = document.getElementById("dad-month").value;
+    let f = document.getElementById("dad-day").value;
+
+    /* if your-month >= your-day, let g = your-month - your-day */
     /* else let a = your-day - your-month */
 
-    /* if mom-month >= mom-day, let b = mom-month - mom-day */
+    if (a >= b) {
+        let g = a - b;
+    }
+    else {
+        let g = b - a;
+    }
+
+    /* if mom-month >= mom-day, let h = mom-month - mom-day */
     /* else let b = mom-day - mom-month */
 
-    /* if dad-month >= dad-day, let c = dad-month - dad-day */
+    if (c >= d) {
+        let h = c - d;
+    }
+    else {
+        let h = d - c;
+    }
+
+    /* if dad-month >= dad-day, let i = dad-month - dad-day */
     /* else let c = dad-day - dad-month */
 
-    /* if a >= b, let d = a - b */
-    /* else let d = b - a */
+    if (e >= f) {
+        let i = e - f;
+    }
+    else {
+        let i = f - e;
+    }
+
+    /* if g >= h, let j = g - h */
+    /* else let j = i - h */
+
+    if (h >= i) {
+        let j = h - i;
+    }
+    else {
+        let j = i - h;
+    }
 
     /* if d >= c, let magic = d - c; */
     /* else let magic = c - d */
 
-    /* return magic number */
+    if (g >= j) {
+        let magic = g - j;
+    }
+    else {
+        let magic = j - g;
+    }
 
+    /* return magic number */
+    return magic;
 }
 
 /* Event Handlers */
