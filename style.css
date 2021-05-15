@@ -1,0 +1,67 @@
+body {
+    font-family: 'Texturina', serif;
+    font-size: 150%;
+}
+
+.head-wrap {
+    top: 0;
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    top: 0;
+    width: 100%;
+}
+
+.image-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-wrap {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(375px, 1fr));
+    justify-content: center;
+    align-items: center;
+}
+
+.text-wrap {
+    text-align: center;
+}
+
+.box {
+    justify-content: center;
+    align-items: center;
+    text-justify: center;
+    text-align: center;
+}
+
+.btn-wrap {
+    margin-top: 20px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.button {
+    display:inline-block;
+    padding:0.5em 3em;
+    border:0.16em solid black;
+    background-color: transparent;
+    margin:0 0.3em 0.3em 0;
+    box-sizing: border-box;
+    text-decoration:none;
+    text-transform:uppercase;
+    font-family: 'Texturina', serif;
+    font-weight: 100;
+    color: black;
+    text-align:center;
+    transition: all 0.15s;
+}
+
+.button:hover {
+    cursor: pointer;
+}
