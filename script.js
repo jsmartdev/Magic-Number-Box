@@ -12,7 +12,7 @@ function introTemplate() {
 }
 
 function formTemplate() {
-    return `<form name="numbers" id="num-form">
+    return `<form name="dates" id="dates">
                 <div class="form-wrap">
                     <div class="box">
                         <label>Your Birthday</label><br>
@@ -31,7 +31,7 @@ function formTemplate() {
                     </div>
                 </div>    
                 <div class="btn-wrap">
-                    <input class="button" type="submit" title="Submit your answers">
+                    <input class="button" type="submit" title="Submit your answers" id="dates">
                 </div>
             </form>`;
 }
@@ -40,8 +40,8 @@ function responseTemplate() {
     return `<div class="text-wrap">
                 <p>Behold, your secret magical number is .</p>
             </div>
-            <form id="back" class="btn-wrap">
-                <input class="button" type="submit" value="Begin">
+            <form id="return" class="btn-wrap">
+                <input class="button" type="submit" value="Return">
             </form>`;
 }
 
@@ -81,7 +81,7 @@ function getNum() {
     /* else let magic = c - d */
 
     /* return magic number */
-    
+
 }
 
 /* Event Handlers */
@@ -94,11 +94,15 @@ function handleBegin() {
 };
 
 function handleSubmit() {
-
+    $('main').on("submit", "#dates", function(event) {
+        event.preventDefault();
+        getNum();
+        renderResponse();
+    })
 }
 
-function handleBack() {
-    $('main').on("submit", "#back", function(event) {
+function handleReturn() {
+    $('main').on("submit", "#return", function(event) {
         event.preventDefault();
         renderIntro();
     });
