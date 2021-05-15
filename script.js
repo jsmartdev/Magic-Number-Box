@@ -65,7 +65,23 @@ function renderResponse() {
 /* Arithmetic Function */
 
 function getNum() {
+    /* if your-month >= your-day, let a = your-month - your-day */
+    /* else let a = your-day - your-month */
 
+    /* if mom-month >= mom-day, let b = mom-month - mom-day */
+    /* else let b = mom-day - mom-month */
+
+    /* if dad-month >= dad-day, let c = dad-month - dad-day */
+    /* else let c = dad-day - dad-month */
+
+    /* if a >= b, let d = a - b */
+    /* else let d = b - a */
+
+    /* if d >= c, let magic = d - c; */
+    /* else let magic = c - d */
+
+    /* return magic number */
+    
 }
 
 /* Event Handlers */
