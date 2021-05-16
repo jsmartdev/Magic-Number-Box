@@ -1,5 +1,6 @@
 /* eslint-disable */
 
+let magicNum = 0;
 
 /* Template Functions */
 
@@ -39,7 +40,7 @@ function formTemplate() {
 
 function responseTemplate() {
     return `<div class="text-wrap">
-                <p>Behold, your secret magical number is ${magic}.</p>
+                <p>Behold, your secret magical number is ${magicNum}.</p>
             </div>
             <form id="return" class="btn-wrap">
                 <input class="button" type="submit" value="Return">
@@ -64,6 +65,20 @@ function renderResponse() {
     $('main').html(template);
 }
 
+/* Function to calculate magic number from form input*/
+
+function getNum() {
+    let yourMonth = document.getElementById("your-month").value;
+    let yourDay = document.getElementById("your-day").value;
+    let momMonth = document.getElementById("mom-month").value;
+    let momDay = document.getElementById("mom-day").value;
+    let dadMonth = document.getElementById("dad-month").value;
+    let dadDay = document.getElementById("dad-day").value;
+    
+    let yourNum = Math.abs(yourMonth - yourDay);
+    console.log(yourNum);
+}
+
 /* Event Handlers */
 
 function handleBegin() {
@@ -80,7 +95,6 @@ function handleSubmit() {
         renderResponse();
     })
 }
-
 
 function handleReturn() {
     $('main').on("submit", "#return", function(event) {
