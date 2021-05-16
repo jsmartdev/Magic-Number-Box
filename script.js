@@ -54,6 +54,11 @@ function renderIntro() {
     template = introTemplate();
     $('main').html(template);
 }
+/*
+function renderInstruct() {
+    template = intstructTemplate();
+    $('main').html(template);
+}*/
 
 function renderForm() {
     template = formTemplate();
@@ -74,9 +79,13 @@ function getNum() {
     let momDay = document.getElementById("mom-day").value;
     let dadMonth = document.getElementById("dad-month").value;
     let dadDay = document.getElementById("dad-day").value;
-    
     let yourNum = Math.abs(yourMonth - yourDay);
-    console.log(yourNum);
+    let momNum = Math.abs(momMonth - momDay);
+    let dadNum = Math.abs(dadMonth - dadDay);
+    let parentsNum = Math.abs(momNum - dadNum);
+    let plusNum = Math.abs(parentsNum - yourNum);
+    magicNum += plusNum;
+    console.log(magicNum);
 }
 
 /* Event Handlers */
@@ -84,6 +93,7 @@ function getNum() {
 function handleBegin() {
     $('main').on("submit", "#begin", function(event) {
         event.preventDefault();
+        console.log(magicNum);
         renderForm();
     });
 };
@@ -99,6 +109,7 @@ function handleSubmit() {
 function handleReturn() {
     $('main').on("submit", "#return", function(event) {
         event.preventDefault();
+        magicNum -= magicNum;
         renderIntro();
     });
 }
