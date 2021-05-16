@@ -85,7 +85,6 @@ function getNum() {
     let parentsNum = Math.abs(momNum - dadNum);
     let plusNum = Math.abs(parentsNum - yourNum);
     magicNum += plusNum;
-    console.log(magicNum);
 }
 
 /* Event Handlers */
@@ -93,7 +92,6 @@ function getNum() {
 function handleBegin() {
     $('main').on("submit", "#begin", function(event) {
         event.preventDefault();
-        console.log(magicNum);
         renderForm();
     });
 };
